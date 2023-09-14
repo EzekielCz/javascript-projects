@@ -1,3 +1,4 @@
+
 let launchReady = false;
 let fuelLevel = 27000;
 
