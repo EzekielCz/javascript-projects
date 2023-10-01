@@ -15,12 +15,14 @@ function mealAssembly(protein, grains, veggies, beverages, desserts, numMeals) {
   
   /// Part A #2: Write a ``for`` loop inside this function
   /// Code your solution for part A #2 below this comment (and above the return statement) ... ///
- //for (let i = 0; i < pantry.length; i++){
-  //for (let j=0; j < protein.length; j++){
-   //for (let i = 0; i)
-  protein.push[0];
-    console.log(protein);
- // }
+ for (let i = 0; i < numMeals; i++){
+  let oneMeal = [];
+  for (let j=0; j < pantry.length; j++) {
+    oneMeal.push(pantry[j][i]);
+  
+  }
+  meals.push(oneMeal);
+ }
 
   return meals;
 }
@@ -29,19 +31,39 @@ function mealAssembly(protein, grains, veggies, beverages, desserts, numMeals) {
 
 
 function askForNumber() {
-  numMeals = input.question("How many meals would you like to make?");
+  numMeals = Number(input.question("How many meals would you like to make? Enter a number 1 through 6: "));
   
   /// CODE YOUR SOLUTION TO PART B here ///
+while(numMeals < 1 || numMeals > 6 || isNaN(numMeals)) {
+  numMeals = Number(input.question(" Try agian, a number from 1 to 6 needs to be entered.: "));
+}
 
   return numMeals;
 }
 
 
 function generatePassword(string1, string2) {
+  let longerString;
+  let shorterString;
+
+  if(string1.length < string2.length) {
+    longerString = string2;
+    shorterString = string1;
+  } else {
+    longerString = string1;
+    shorterString = string2;
+  }
+
   let code = '';
 
   /// Code your Bonus Mission Solution here ///
-
+  for(let i = 0; i < longerString.length; i++ ){
+    if(shorterString[i] === undefined) {
+      code += longerString[i]
+    } else {
+      code += longerString[i] + shorterString[i];
+    }
+  }
   return code;
 }
 
@@ -52,24 +74,24 @@ function runProgram() {
   /// Change the final input variable (aka numMeals) here to ensure your solution makes the right number of meals ///
   /// We've started with the number 2 for now. Does your solution still work if you change this value? ///
   
-   let meals = mealAssembly(protein, grains, veggies, beverages, desserts, 2);
-  console.log(meals)
+   //let meals = mealAssembly(protein, grains, veggies, beverages, desserts, 2);
+  //console.log(meals)
   
 
   /// TEST PART B HERE ///
   /// UNCOMMENT the next two lines to test your ``askForNumber`` solution ///
   /// Tip - don't test this part until you're happy with your solution to part A #2 ///
   
-  // let mealsForX = mealAssembly(protein, grains, veggies, beverages, desserts, askForNumber());
-  // console.log(mealsForX);
+   //let mealsForX = mealAssembly(protein, grains, veggies, beverages, desserts, askForNumber());
+   //console.log(mealsForX);
 
     /// TEST PART C HERE ///
   /// UNCOMMENT the remaining commented lines and change the password1 and password2 strings to ensure your code is doing its job ///
 
-  // let password1 = '';
-  // let password2 = '';
-  // console.log("Time to run the password generator so we can update the menu tomorrow.")
-  // console.log(`The new password is: ${generatePassword(password1, password2)}`);
+   let password1 = 'Treelizard';
+   let password2 = 'DesertCat.';
+  console.log("Time to run the password generator so we can update the menu tomorrow.")
+  console.log(`The new password is: ${generatePassword(password1, password2)}`);
 }
 
 module.exports = {
