@@ -47,10 +47,17 @@ Construct ``for`` loops to accomplish the following tasks:
   a. One array contains the even numbers, and the other holds the odds.
   b. Print the arrays to confirm the results. */
 
-  let Array = [2, 3, 13, 18, -5, 38, -10, 11, 0, 104];
+  let nums = [2, 3, 13, 18, -5, 38, -10, 11, 0, 104];
   let evens = [];
   let odds = [];
 
+    for (let i = 0; i < nums.length; i++){
+      if (nums[i] % 2 ==0) {
+        evens.push(nums[i])
+      } else {
+        odds.push(nums[i])
+      }
+  }
 
   console.log(evens);
-  //console.log(o);
+  console.log(odds);
