@@ -1,28 +1,35 @@
 //We want to COMPLETELY reverse an array by flipping the order of the entries AND flipping the order of characters in each element.
 
 // Part One: Reverse Characters
-let string1 = 'apple';
-let string2 = 'LC101';
-let string3 = 'Capitalized Letters';
-let string4 = 'I love the smell of code in the morning.';
+//let string1 = 'apple';
+//let string2 = 'LC101';
+//let string3 = 'Capitalized Letters';
+//let string4 = 'I love the smell of code in the morning.';
 // 1. Define the function as reverseCharacters. Give it one parameter, which will be the string to reverse.
 // 2. Within the function, split the string into an array, then reverse the array.
 // 3. Use join to create the reversed string and return that string from the function.
 // 4. Below the function, define and initialize a variable to hold a string.
 // 5. Use console.log(reverseCharacters(myVariableName)); to call the function and verify that it correctly reverses the characters in the string.
 // 6. Optional: Use method chaining to reduce the lines of code within the function.
-function reverseCharacters(string){
-    if (typeof string === "number") {
+function reverseCharacters(str){
+    if(typeof str === "number"){
+        str = String(str);
+    }
+    let stringArray = str.split("");
+    return stringArray.reverse().join(""); 
+}
+console.log(reverseCharacters(1234655874447));
+    /*if (typeof string === "number") {
         return Number(String(string).split("").reverse().join(""));
     } else {return string.split("").reverse().join("");
 
     }
     
-}
-console.log(reverseCharacters(string1));
+}*/
+/*console.log(reverseCharacters(string1));
 console.log(reverseCharacters(string2));
 console.log(reverseCharacters(string3));
-console.log(reverseCharacters(string4));
+console.log(reverseCharacters(string4));*/
 
 
 
@@ -33,11 +40,11 @@ console.log(reverseCharacters(string4));
 // 3. If typeof is ’number’, convert the parameter to a string, reverse the characters, then convert it back into a number.
 // 4. Return the reversed number.
 // 5. Be sure to print the result returned by the function to verify that your code works for both strings and numbers. Do this before moving on to the next exercise.
-let number1 = 8675309;
+/*let number1 = 8675309;
 let number2 = 72.4389;
 
 console.log(reverseCharacters(number1));
-console.log(reverseCharacters(number2));
+console.log(reverseCharacters(number2));*/
 
 
 
@@ -47,16 +54,14 @@ let arrayTest3 = ['hello', 'world', 123, 'orange'];
 
 // Part Three: Complete Reversal
 function newArrayReversed(array) {
-    let newArray = [];
+       let newArray = [];
     for(let i =0; i <array.length; i++) {
-        newArray.push(reverseCharacters(array[i]));
+        newArray.unshift(reverseCharacters(array[i]));
     }
-    let theReversedArray = newArray.reverse();
-    return theReversedArray;
+    return newArray;
 }
 console.log(newArrayReversed(arrayTest1));
-console.log(newArrayReversed(arrayTest2))
-console.log(newArrayReversed(arrayTest3))
+console.log(newArrayReversed(arrayTest2));
 // 1. Define and initialize an empty array.
 // 2. Loop through the old array.
 // 3. For each element in the old array, call reverseCharacters to flip the characters or digits.
@@ -73,11 +78,32 @@ console.log(newArrayReversed(arrayTest3))
 // 4. Use a template literal to return the phrase We put the '___' in '___'. Fill the first blank with the modified string, and fill the second blank with the original string.
 
 // Test Function
+function funPhrase(pharse = "Functions rock"){
+    let substring="";
+    if(pharse.length ===0){
+        pharse = "Functions rock!"
+    }
+
+    if(pharse.length <4){
+        substring = phrase.slice(-1);
+    }else {
+        substring = pharse.slice(0,3);
+    }
+    return`We put the ${substring} in ${pharse}.`
+}
+
+let str = "Hello";
+console.log(funPhrase(str));
 
 // 1. Outside of the function, define the variable str and initialize it with a string (e.g. 'Functions rock!').
 // 2. Call your function and print the returned phrase.
 
 // Area of rectangle equal to length x width
+function areaOfRectangle(length, width = length){
+    return `The area is ${length*width} cm^2 `;
+}
+console.log(areaOfRectangle(4,3));
+
 
 // 1. Define a function with the required parameters to calculate the area of a rectangle.
 // 2. The function should return the area, NOT print it.
