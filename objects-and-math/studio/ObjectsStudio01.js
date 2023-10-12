@@ -1,10 +1,31 @@
 // Code your selectRandomEntry function here:
-
+function selectRandomEntry(){
+  let randomEntry = Math.floor(Math.random()* idNumbers.length);
+  return idNumbers[randomEntry]
+}
 
 // Code your buildCrewArray function here:
+function buildCrewArray(randomNewId,animals){
+  let crew = [];
+  for (let i=0; i <candidates.length; i++){
+    if(randomNewId.inculdes(candidates[i].astronautID)){
+      crew.push(animals[i]);
+    }
 
+  }
+  console.log(`${crew.name[0]}  ,${crew.name[1]}, ${crew.name[2]}, and ${crew.name[3]} are going to space!`);
+}
 
 let idNumbers = [291, 414, 503, 599, 796, 890];
+let selectedEntry = [];
+
+while(selectedEntry.length <3 ){
+  let randomNewId = selectRandomEntry(idNumbers);
+  if(!RandomEntry.inculdes(randomNewId)){
+    RandomEntry.push(randomNewId);
+  }
+}
+
 
 // Here are the candidates and the 'animals' array:
 let candidateA = {

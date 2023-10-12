@@ -56,6 +56,7 @@ console.log(fuelLevel);
 
 If the altitude is 2000 km or higher, add “Orbit achieved!” Otherwise add, “Failed to reach orbit.”*/
  console.log(`The shuttle gained an altitude of ${altitude}km. `)
+ 
  if(altitude >= 2000){
   console.log("Orbit achieved!");
  } else {
