@@ -66,8 +66,8 @@ crewReports();
       }
       return results;
      };
-     fitnessTest(superChimpOne.move(1));
-
+    console.log(fitnessTest(crew));
+   //   console.log(results);
      //console.log(superChimpOne.move(2));
 // After you have created the other object literals, add the astronautID property to each one.
 
