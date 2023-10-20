@@ -1,3 +1,4 @@
+
 function makeLine(size){
         let line = '';
         for (let i = 0; i < size; i++) {
@@ -7,15 +8,41 @@ function makeLine(size){
         return line;
     }
     makeLine();
-    console.log(makeLine(5));
+    //console.log(makeLine(5));
 
+    function makeSquare (length){
+      let square = "";
+      for (let i=0; i< length; i++ ){
+        square += (makeLine(length)+ "\n")
+      }
+      return square;
+    }
+    //console.log(makeSquare(8));
 
-    function makeSquare(width,height){
-         let square = '';
+   function makeRectangle(width,height){
+         let rectangle = '';
             for (let i = 0; i < height; i++) {
-              square += (makeLine(width) + '\n');
+              rectangle += (makeLine(width) + '\n');
             }
-            return square.slice(4, 4);
+            return rectangle;
           
     };
-    console.log(makeSquare(4,4));
+    // console.log(makeRectangle(5,4));
+
+    function makeDownwardStairs(height) {
+      let stairs = '';
+      for (let i = 0; i < height; i++) {
+        stairs += (makeLine(i+1) + '\n');
+      }
+      return stairs.slice(0, -1);
+    }
+    // console.log(makeDownwardStairs(4));
+
+    function makeSpaceLine(numSpaces, numChars){
+      let spaceLine = "";
+      for(let i=0; i <numSpaces; I++){
+        spaceLine + " " +spaceLine + " "+
+      }
+      return spaceLine;
+    }
+    console.log(makeSpaceLine)
